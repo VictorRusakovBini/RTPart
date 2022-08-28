@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.5.0" />
+        <PackageReference Include="Google.Protobuf.Tools" Version="3.5.0" GeneratePathProperty="true" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Models" />
+    </ItemGroup>
+
+    <Target Name="protogen_WIN" BeforeTargets="BeforeBuild" Condition="'$(OS)' != 'Unix'">
+        <Exec Command="$(PkgGoogle_Protobuf_Tools)\tools\windows_x64\protoc packets.proto --proto_path=$(ProjectDir)Protos --csharp_out=$(ProjectDir)Models" />
+    </Target>
+    <Target Name="protogen_OSX" BeforeTargets="BeforeBuild" Condition="'$(OS)' == 'Unix'">
+        <Exec Command="$(PkgGoogle_Protobuf_Tools)\tools\macosx_x64\protoc packets.proto --proto_path=$(ProjectDir)Protos --csharp_out=$(ProjectDir)Models" />
+    </Target>
+
+</Project>

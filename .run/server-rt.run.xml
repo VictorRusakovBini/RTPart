@@ -1,0 +1,39 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="server-rt" type="DotNetProject" factoryName=".NET Project">
+    <option name="EXE_PATH" value="$PROJECT_DIR$/server-rt/bin/Debug/net6.0/server-rt" />
+    <option name="PROGRAM_PARAMETERS" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server-rt/bin/Debug/net6.0" />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <envs>
+      <env name="BACKLOG" value="1000" />
+      <env name="DEBUG" value="true" />
+      <env name="PORT" value="3355" />
+      <env name="REDIS_HOST" value="0.0.0.0" />
+      <env name="REDIS_PASSWORD" value="A74MsS9hXgMXcFsTALxkgA4xXcUQYDWm3bnZv4pKnn5vWtCVEkvdfqac8GZW8WrV" />
+      <env name="VERSION" value="local 0.0.1" />
+    </envs>
+    <option name="USE_EXTERNAL_CONSOLE" value="0" />
+    <option name="USE_MONO" value="0" />
+    <option name="RUNTIME_ARGUMENTS" value="" />
+    <option name="PROJECT_PATH" value="$PROJECT_DIR$/server-rt/server-rt.csproj" />
+    <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+    <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+    <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+    <option name="PROJECT_KIND" value="DotNetCore" />
+    <option name="PROJECT_TFM" value="net6.0" />
+    <method v="2">
+      <option name="Build" />
+    </method>
+  </configuration>
+  <configuration default="false" name="server-rt (docker)" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="binidev/server-rt" />
+        <option name="buildOnly" value="true" />
+        <option name="sourceFilePath" value="server-rt.Dockerfile" />
+      </settings>
+    </deployment>
+    <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isPublishEnabled="true" />
+    <method v="2" />
+  </configuration>
+</component>

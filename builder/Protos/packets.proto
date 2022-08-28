@@ -1,0 +1,40 @@
+syntax = "proto3";
+option csharp_namespace = "core.Networking.Generated";
+
+enum JoinRoomResults{
+    JrrDone = 0;
+    JrrFail = 1;
+}
+
+message PckConnect{
+  int32 userId = 1;
+  string roomId = 2;
+}
+
+message PckConnectResult{
+  JoinRoomResults result = 1;
+}
+
+message SomeBigStat{
+  int32 stat1 = 1;
+  float stat2 = 2;
+  string stat3 = 3;
+}
+
+message PckSendStat1{
+  string stat = 1;
+}
+
+message PckSendStat2{
+  int32 stat = 1;
+}
+
+message PckSendStat3{
+  SomeBigStat stat = 1;
+}
+
+message PckSendStat4{
+  SomeBigStat stat1 = 1;
+  int32 stat2 = 2;
+}
+
